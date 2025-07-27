@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #444;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      color: yellow;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .projects .project {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .filters {
+      margin-bottom: 1rem;
+    }
+
+    .filters button {
+      margin-right: 10px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vidit Sharma</h1>
+    <p>Web Developer | Programmer</p>
+  </header>
+
+  <nav>
+    <a href="#about" class="nav-link active">About</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate software engineer with experience in creating responsive and interactive websites and apps using modern technologies.</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="filters">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('web')">Web</button>
+      <button onclick="filterProjects('apps')">App</button>
+    </div>
+    <div class="projects">
+      <div class="project" data-type="web">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio built with HTML, CSS, and JavaScript.</p>
+	
+      </div>
+      <div class="project" data-type="apps">
+        <h3>Face Mask Detection</h3>
+        <p>A web-based application built by a team of four using python. Contains AI to check for mask and Dashboard with integrated Database to store and display the pictures.</p>
+      </div>
+      <div class="project" data-type="web">
+        <h3>Quiz site</h3>
+   	<p>A responsive site with Single Choice and Multiple Choice questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: viditsharmarv31@gmail.com</p>
+    <p><a href="https://github.com/viditShar" style="text-decoration: none; color: inherit;">GitHub: https://github.com/viditShar</a></p>
+    <p><a href="www.linkedin.com/in/vidit-sharma-0b4bb02a3" style="text-decoration: none; color: inherit;">LinkedIn: www.linkedin.com/in/vidit-sharma-0b4bb02a3</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vidit Sharma. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Navigation highlight
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Project filter
+    function filterProjects(type) {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(project => {
+        if (type === 'all' || project.dataset.type === type) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
