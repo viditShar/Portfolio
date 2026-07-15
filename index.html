@@ -1,166 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-
-    nav {
-      background: #444;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 1rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a.active {
-      color: yellow;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .projects .project {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      background-color: #fff;
-    }
-
-    .filters {
-      margin-bottom: 1rem;
-    }
-
-    .filters button {
-      margin-right: 10px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidit Sharma — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Vidit Sharma</h1>
-    <p>Web Developer | Programmer</p>
-  </header>
-
-  <nav>
-    <a href="#about" class="nav-link active">About</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#contact" class="nav-link">Contact</a>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">VS<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a passionate software engineer with experience in creating responsive and interactive websites and apps using modern technologies.</p>
-  </section>
-
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="filters">
-      <button onclick="filterProjects('all')">All</button>
-      <button onclick="filterProjects('web')">Web</button>
-      <button onclick="filterProjects('apps')">App</button>
-    </div>
-    <div class="projects">
-      <div class="project" data-type="web">
-        <h3>Portfolio Website</h3>
-        <p>A responsive portfolio built with HTML, CSS, and JavaScript.</p>
-	
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-avatar">VS</div>
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name">Vidit Sharma</h1>
+      <p class="hero-tagline">
+        B.Tech CSE (Blockchain) @ VIT Vellore &nbsp;·&nbsp; Interested in Web3, AI & Full-Stack
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="mailto:viditsharmarv31@gmail.com" class="btn btn-outline">Get in Touch</a>
       </div>
-      <div class="project" data-type="apps">
-        <h3>Face Mask Detection</h3>
-        <p>A web-based application built by a team of four using python. Contains AI to check for mask and Dashboard with integrated Database to store and display the pictures.</p>
-      </div>
-      <div class="project" data-type="web">
-        <h3>Quiz site</h3>
-   	<p>A responsive site with Single Choice and Multiple Choice questions.</p>
+      <div class="hero-socials">
+        <a href="https://github.com/viditShar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/vidit-sharma" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:viditsharmarv31@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
+    <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: viditsharmarv31@gmail.com</p>
-    <p><a href="https://github.com/viditShar" style="text-decoration: none; color: inherit;">GitHub: https://github.com/viditShar</a></p>
-    <p><a href="www.linkedin.com/in/vidit-sharma-0b4bb02a3" style="text-decoration: none; color: inherit;">LinkedIn: www.linkedin.com/in/vidit-sharma-0b4bb02a3</a></p>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">About <span class="accent">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a Computer Science undergraduate at VIT Vellore, specializing in Blockchain Technology.
+            I love building at the intersection of <strong>Web3, AI/ML, and full-stack development</strong> —
+            from smart-contract-powered dApps to real-time computer vision systems.
+          </p>
+          <p>
+            Through internships at <strong>Tata Cummins</strong> and <strong>Tata Motors</strong>, I've shipped
+            production dashboards and ML models. I enjoy turning complex engineering challenges
+            into clean, working software.
+          </p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Internships</span></div>
+            <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Oracle Certs</span></div>
+            <div class="stat"><span class="stat-num">8.65</span><span class="stat-label">CGPA</span></div>
+          </div>
+        </div>
+        <div class="education reveal">
+          <h3>Education</h3>
+          <div class="edu-card glass">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-info">
+              <h4>VIT University, Vellore</h4>
+              <p>B.Tech. in Computer Science (Blockchain Specialization)</p>
+              <span class="edu-meta">CGPA: 8.65 &nbsp;·&nbsp; Expected 2027</span>
+            </div>
+          </div>
+          <div class="edu-card glass">
+            <div class="edu-icon"><i class="fas fa-school"></i></div>
+            <div class="edu-info">
+              <h4>Little Flower School, Jamshedpur</h4>
+              <p>ICSE (10th): 91% &nbsp;·&nbsp; ISE (12th): 88.75%</p>
+              <span class="edu-meta">2010 – 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Internship <span class="accent">Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <div>
+                <h3>Tata Cummins Pvt. Ltd.</h3>
+                <p class="timeline-role">Software Development Intern — CMES Dashboard Migration</p>
+              </div>
+              <span class="timeline-date"><i class="far fa-calendar-alt"></i> May 2026 – Jun 2026</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Executed the migration of the Cummins Manufacturing Execution System (CMES) dashboard using React.js and ASP.NET Core.</li>
+              <li>Developed and enhanced the Work-in-Progress (WIP) dashboard by integrating SQL queries with backend APIs.</li>
+              <li>Engineered UI components and optimized Production Report and Model Tracking queries for manufacturing dashboards.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">React.js</span><span class="tag">ASP.NET Core</span><span class="tag">SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <div>
+                <h3>Tata Motors Limited</h3>
+                <p class="timeline-role">AI/ML Intern — Face Mask Detection</p>
+              </div>
+              <span class="timeline-date"><i class="far fa-calendar-alt"></i> May 2025 – Jun 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built a real-time face mask detection system using Python, YOLO, and OpenCV.</li>
+              <li>Improved detection accuracy and implemented live webcam-based inference.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">OpenCV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <div>
+                <h3>AICTE Online</h3>
+                <p class="timeline-role">AI/ML Intern — Waste Segregation</p>
+              </div>
+              <span class="timeline-date"><i class="far fa-calendar-alt"></i> Nov 2025 – Dec 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed a waste classification model using MobileNetV2 for multi-class image prediction.</li>
+              <li>Built an end-to-end ML pipeline and integrated the model into a Streamlit application.</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Python</span><span class="tag">MobileNetV2</span><span class="tag">Streamlit</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Featured <span class="accent">Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card glass reveal">
+          <div class="project-icon"><i class="fas fa-link"></i></div>
+          <h3>EvidenceChain</h3>
+          <p class="project-subtitle">Blockchain-based Evidence Integrity System</p>
+          <p class="project-desc">
+            Architected a web-based evidence management system with role-based case creation and tracking.
+            Evidence stored on IPFS with metadata recorded on-chain for full traceability and hash-based tamper detection.
+          </p>
+          <ul class="project-highlights">
+            <li>Stored evidence on IPFS & recorded metadata on blockchain for traceability</li>
+            <li>Implemented hash-based verification to detect tampering</li>
+            <li>Integrated smart contracts using Web3 for secure upload & verification workflows</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">Web3</span><span class="tag">Polygon</span><span class="tag">IPFS</span><span class="tag">Solidity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/viditShar" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>LoR Verification App</h3>
+          <p class="project-subtitle">Blockchain-based LoR Verification Mobile App</p>
+          <p class="project-desc">
+            Mobile app to verify the authenticity of Letters of Recommendation using blockchain.
+            Implements hash-based validation with tamper-proof issuance records and an issuer–verifier workflow.
+          </p>
+          <ul class="project-highlights">
+            <li>Implemented hash-based validation for tamper-proof verification</li>
+            <li>Utilized Supabase for backend storage</li>
+            <li>Designed issuer–verifier workflows for end-to-end trust</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Web3</span><span class="tag">Polygon</span><span class="tag">Supabase</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/viditShar" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-icon"><i class="fas fa-atom"></i></div>
+          <h3>Quantum Teleportation Circuit</h3>
+          <p class="project-subtitle">Quantum Computing Simulation</p>
+          <p class="project-desc">
+            Simulated quantum teleportation using entanglement and classical communication in Qiskit.
+            Designed circuits demonstrating Bell-state measurement and state reconstruction.
+          </p>
+          <ul class="project-highlights">
+            <li>Simulated quantum teleportation via entanglement & classical channels</li>
+            <li>Designed Bell-state measurement circuits in Qiskit</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">Python</span><span class="tag">Qiskit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/viditShar" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-icon"><i class="fas fa-question-circle"></i></div>
+          <h3>Online Quiz Website</h3>
+          <p class="project-subtitle">Interactive Web Application</p>
+          <p class="project-desc">
+            Responsive quiz application with predefined questions, real-time score calculation,
+            client-side answer validation, and instant result display.
+          </p>
+          <ul class="project-highlights">
+            <li>Developed a responsive quiz app with real-time score tracking</li>
+            <li>Implemented client-side logic for answer validation & result display</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/viditShar" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Technical <span class="accent">Skills</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-group glass reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-code"></i>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">SQL (Oracle)</span>
+            <span class="skill-tag">Solidity</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-cubes"></i>
+            <h3>Blockchain &amp; Web3</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Smart Contracts</span>
+            <span class="skill-tag">Web3.js</span>
+            <span class="skill-tag">Polygon</span>
+            <span class="skill-tag">IPFS</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-brain"></i>
+            <h3>Core CS Fundamentals</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Data Structures &amp; Algorithms</span>
+            <span class="skill-tag">Operating Systems</span>
+            <span class="skill-tag">DBMS</span>
+            <span class="skill-tag">OOPs</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass reveal">
+          <div class="skill-group-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools &amp; Platforms</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Blockchain Fundamentals</span>
+            <span class="skill-tag">AI/ML Basics</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Certifications</h2>
+      <div class="certs-grid">
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info">
+            <span class="cert-issuer">Oracle</span>
+            <h3>Generative AI Foundation</h3>
+            <p>Fundamentals of LLMs and prompt engineering</p>
+            <span class="cert-year">2025</span>
+          </div>
+        </div>
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info">
+            <span class="cert-issuer">Oracle</span>
+            <h3>Generative AI Professional</h3>
+            <p>Advanced AI techniques and model deployment</p>
+            <span class="cert-year">2025</span>
+          </div>
+        </div>
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info">
+            <span class="cert-issuer">Oracle</span>
+            <h3>OCI Data Science Professional</h3>
+            <p>ML workflows and MLOps on Oracle Cloud Infrastructure</p>
+            <span class="cert-year">2025</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Languages -->
+      <div class="languages-section reveal">
+        <h3>Languages</h3>
+        <div class="languages-list">
+          <div class="lang-item"><span class="lang-name">Hindi</span><span class="lang-level native">Native</span></div>
+          <div class="lang-item"><span class="lang-name">English</span><span class="lang-level proficient">Proficient</span></div>
+          <div class="lang-item"><span class="lang-name">Japanese</span><span class="lang-level elementary">Elementary</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">Say <span class="accent">Hello</span></h2>
+      <div class="contact-centered reveal">
+        <p class="contact-blurb">
+          I'm a third-year undergrad still figuring things out — but I'm always up for a good conversation,
+          whether it's about a project, an internship, or just something interesting you're working on.
+          Feel free to reach out on any of these.
+        </p>
+        <div class="contact-links-row">
+          <a href="mailto:viditsharmarv31@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            <span>viditsharmarv31@gmail.com</span>
+          </a>
+          <a href="tel:+917091202973" class="contact-link">
+            <i class="fas fa-phone"></i>
+            <span>+91 7091202973</span>
+          </a>
+          <a href="https://linkedin.com/in/vidit-sharma" target="_blank" rel="noopener" class="contact-link">
+            <i class="fab fa-linkedin"></i>
+            <span>linkedin.com/in/vidit-sharma</span>
+          </a>
+          <a href="https://github.com/viditShar" target="_blank" rel="noopener" class="contact-link">
+            <i class="fab fa-github"></i>
+            <span>github.com/viditShar</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Vidit Sharma. All rights reserved.</p>
+    <div class="container">
+      <p>Designed &amp; built by <span class="accent">Vidit Sharma</span> &nbsp;·&nbsp; 2025</p>
+      <div class="footer-socials">
+        <a href="https://github.com/viditShar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/vidit-sharma" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:viditsharmarv31@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    // Navigation highlight
-    const links = document.querySelectorAll('.nav-link');
-    links.forEach(link => {
-      link.addEventListener('click', function() {
-        links.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-
-    // Project filter
-    function filterProjects(type) {
-      const projects = document.querySelectorAll('.project');
-      projects.forEach(project => {
-        if (type === 'all' || project.dataset.type === type) {
-          project.style.display = 'block';
-        } else {
-          project.style.display = 'none';
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
